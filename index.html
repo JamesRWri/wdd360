@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WDD 360 | Course Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;1,400&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #000000;
+      --text-main: #0f172a;
+      --accent: #2563eb;
+      --shadow-color: rgba(0, 0, 0, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 1rem;
+    }
+
+    header {
+      max-width: 900px;
+      margin: 0 auto 2.5rem auto;
+      width: 100%;
+      text-align: center;
+      background: var(--card-bg);
+      border: 3px solid var(--border-color);
+      padding: 2rem;
+      box-shadow: 5px 5px 0px var(--shadow-color);
+    }
+
+    h1 {
+      font-family: 'Lora', serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p.subtitle {
+      font-weight: 600;
+      color: #475569;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+      flex-grow: 1;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 3px solid var(--border-color);
+      padding: 1.5rem;
+      box-shadow: 4px 4px 0px var(--shadow-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 7px 7px 0px var(--shadow-color);
+    }
+
+    .card-tag {
+      display: inline-block;
+      align-self: flex-start;
+      background: var(--border-color);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 0.25rem 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .card h2 {
+      font-family: 'Lora', serif;
+      font-size: 1.35rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #334155;
+      margin-bottom: 1.25rem;
+    }
+
+    .card a {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 800;
+      color: var(--text-main);
+      background: #e2e8f0;
+      border: 2px solid var(--border-color);
+      padding: 0.5rem 1rem;
+      text-align: center;
+      transition: background 0.15s ease;
+    }
+
+    .card a:hover {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    footer {
+      max-width: 900px;
+      margin: 3rem auto 0 auto;
+      width: 100%;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>WDD 360 Portfolio</h1>
+    <p class="subtitle">Full Stack Foundations | James Wright</p>
+  </header>
+
+  <main>
+    <div class="grid">
+
+      <article class="card">
+        <div>
+          <span class="card-tag">Week 1</span>
+          <h2>JavaScript Review</h2>
+          <p>An interactive Pokémon explorer reviewing DOM manipulation, Array methods, fetch promises, and event delegation.</p>
+        </div>
+        <a href="./js-review/index.html">View Activity &rarr;</a>
+      </article>
+
+      <article class="card">
+        <div>
+          <span class="card-tag">Week 2</span>
+          <h2>Upcoming Activity</h2>
+          <p>Next Project</p>
+        </div>
+        <a href="#">Coming Soon</a>
+      </article>
+
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 | WDD 360 Course Portal
+  </footer>
+
+</body>
+</html>
