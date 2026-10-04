@@ -1,0 +1,46 @@
+---
+// Grab summary and forward any remaining attributes via ...props
+const { summary, class: className, ...props } = Astro.props;
+---
+
+<details class:list={[className]} {...props}>
+  <summary>{summary}</summary>
+  <!-- Slot receives child elements passed inside component tags -->
+  <slot />
+</details>
+
+<style>
+  details {
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    margin-bottom: 1em;
+    border-radius: 4px;
+  }
+  summary {
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    transform-origin: 0 50%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-weight: bold;
+  }
+  details[open] summary {
+    transform: scale(1.02);
+  }
+  details[open] > summary::before {
+    transform: rotate(90deg);
+  }
+  details > summary::before {
+    content: "➔";
+    font-size: 1.2em;
+    line-height: 0;
+    transition: transform 0.2s;
+  }
+  details summary::marker,
+  details summary::-webkit-details-marker {
+    display: none;
+    content: "";
+  }
+</style>

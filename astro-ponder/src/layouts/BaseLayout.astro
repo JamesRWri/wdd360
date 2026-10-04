@@ -1,0 +1,20 @@
+---
+import Header from "../components/Header.astro";
+
+const { title = "Default Title" } = Astro.props;
+---
+
+<!lang="en">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Astro Demo | {title}</title>
+  </head>
+  <body>
+    <Header />
+    <main style="padding: 1rem;">
+      <slot />
+    </main>
+  </body>
+</html>

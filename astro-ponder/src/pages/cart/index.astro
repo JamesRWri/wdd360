@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const title = "Shopping Cart";
+---
+
+<BaseLayout title={title}>
+  <h2>Your Cart</h2>
+  <section id="cart">
+    <p>Loading cart items...</p>
+  </section>
+
+  <!-- Do NOT add type="module" or defer - Astro handles script bundling automatically -->
+  <script src="../../js/cart.js"></script>
+</BaseLayout>

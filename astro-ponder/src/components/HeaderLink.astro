@@ -1,0 +1,25 @@
+---
+const { href, class: className, ...props } = Astro.props;
+const { pathname } = Astro.url;
+
+// Check if current URL matches link destination
+const isActive = href === pathname || (href !== '/' && pathname.startsWith(href));
+---
+
+<a href={href} class:list={[className, { active: isActive }]} {...props}>
+  <slot />
+</a>
+
+<style>
+  a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    color: #333;
+  }
+  a.active {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #0076ff;
+  }
+</style>
